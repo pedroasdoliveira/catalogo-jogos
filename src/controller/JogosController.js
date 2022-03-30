@@ -12,3 +12,4 @@ export const getIndex = async (req, res) => {
         console.log(err.message)
     }
 }
+

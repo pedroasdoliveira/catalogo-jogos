@@ -11,9 +11,17 @@
     <%- include('./partials/header.ejs') %>
     <% console.log(jogos) %>
 
-    <section>
+    <section id="inicio">
 
-        <%  %>
+        <h1>Catalogo de Jogos</h1>
+
+        <div>
+            <% jogos.forEach((games) => { %>
+
+                <p><%= games.jogo %></p>
+    
+            <% }) %>
+        </div>
 
     </section>
 

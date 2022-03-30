@@ -1,23 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+:root {
+    /*Normal*/
+    --cor-de-fundo: #a5a9ad;
+    --color: #222527;
+    --link-color: #222;
+    --link-color-hover: #879cd6;
+    --nav: #5f78d1;
+    --input: #b5c3d1;
+
+    --global-padding: 10rem;
+}
+
+.dark-mode:root {
+    --cor-de-fundo: #212529;
+    --color: #b8babb;
+    --link-color: #dee2e6;
+    --link-color-hover: #242835;
+    --nav: #1e3070;
+    --input: #383a3b;
+}
+
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--cor-de-fundo);
+    color: var(--color-normal);
+    font-family: 'Work Sans', sans-serif;
 }
 
 header {
-    background-color: #001253;
+    background-color: var(--nav);
     padding: 1rem;
+    width: 100%;
+    position: fixed;
 }
 
 header nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: 'Cormorant Garamond', 'Franklin Gothic Medium';
 }
 
 header ul {
@@ -30,7 +58,7 @@ header ul {
 
 header ul a {
     text-decoration: none;
-    color: #dedede;
+    color: var(--color);
 }
 
 header ul li {
@@ -38,7 +66,7 @@ header ul li {
 }
 
 div.label {
-    color: #dedede;
+    color: var(--color);;
     width: 23rem;
 }
 
@@ -51,4 +79,21 @@ div.label label {
 div.label input {
     font-size: 1rem;
     border-radius: 5px;
+    color: var(--color);
+    border: 1px solid var(--cor-de-fundo);
+    background-color: var(--input);
+}
+
+section {
+    max-width: 1275px;
+    width: 100%;
+    padding: var(--global-padding);
+    display: flex;
+    justify-content: center;
+    cursor: default;
+}
+
+section h1 {
+    font-size: 2.3rem;
+    color: var(--color);
 }
