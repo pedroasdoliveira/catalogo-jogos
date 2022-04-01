@@ -18,6 +18,9 @@
     --border: #23367a;
     --shadow: #82a2c2;
     --input: #eff7ff;
+    --fundo-botao: #1a2331;
+    --color-botao: #e4e5e6;
+    --border-botao: #4460c5;
 
     --global-padding: 5rem;
     --transition: all .6s ease-in-out;
@@ -33,13 +36,16 @@
     --border: #4460c5;
     --shadow: #132e55;
     --input: #74787a;
+    --fundo-botao: #ceddec;
+    --color-botao: #222527;
+    --border-botao: #23367a;
 }
 
 body {
     background-color: var(--cor-de-fundo);
     color: var(--color-normal);
     font-family: 'Work Sans', sans-serif;
-    transition: all .6s ease-in-out;
+    transition: var(--transition);
 }
 
 header {
@@ -105,15 +111,6 @@ div.label label:hover {
     transform: scale3d(2.5, 1.2, 0.3);
 }
 
-div.label input {
-    font-size: 1rem;
-    border-radius: 5px;
-    color: var(--color);
-    border: 1px solid var(--cor-de-fundo);
-    background-color: var(--input);
-    transition: var(--transition);
-}
-
 section {
     width: 100%;
     padding: var(--global-padding);
@@ -123,8 +120,8 @@ section {
     justify-content: space-evenly;
 }
 
-section h1 {
-    font-size: 2.5rem;
+section h2 {
+    font-size: 3rem;
     color: var(--color);
     margin: 2rem auto;
     text-align: center;
@@ -132,96 +129,90 @@ section h1 {
     transition: var(--transition);
 }
 
-section div.container {
-    margin: 1rem;
-    position: relative;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 400px;
-    max-height: 650px;
-}
-
-section div.container a.container-link {
-    text-decoration: none;
-    transition: var(--transition);
-}
-
-section div.container a.container-link:hover {
-    transform: scale3d(1.1, 1.1, .3);
-}
-
-section div.container div.container-title {
-    display: flex;
-    justify-content: center;
-}
-
-section div.container div.container-title h2 {
-    color: var(--color);
-    font-size: 1.8rem;
-    text-align: center;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-    transition: var(--transition);
-}
-
-section div.container div.container-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    object-fit: contain;
-}
-
-section div.container div.container-image img {
-    width: 55vh;
-    height: 70vh;
-    border-radius: 10px;
-}
-
-section div.container div.container-infos {
+section div.poster {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 1rem 5vw;
-    padding: 0;
-    list-style-type: none;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
+    margin: 0 auto;
+    max-width: 1220px;
+    padding: 20px;
 }
 
-section div.container div.container-infos p {
-    font-size: 1.1rem;
+section div.poster div.poster-image {
+    display: grid;
+    justify-content: center;
+}
+
+section div.poster div.poster-image img {
+    width: 50vh;
+    border: solid 1px var(--border);
+    box-shadow: 10px 8px 5px 8px var(--shadow);
+    transition: var(--transition);
+}
+
+section div.poster div.poster-title {
+    display: grid;
+    justify-content: center;
+}
+
+section div.poster div.poster-title h3 {
     color: var(--color);
-    line-height: 1.5rem;
+    font-size: 2rem;
+    margin: 1rem 0;
+    transition: var(--transition);
+}
+
+section div.poster div.poster-infos {
+    display: grid;
+}
+
+section div.poster div.poster-infos p {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    color: var(--color);
     font-weight: 600;
     text-align: center;
     transition: var(--transition);
 }
 
-section div.container div.container-btn {
-    display: flex;
-    gap: 0.5rem;
+section div.poster div.poster-infos p.descricao {
+    margin: 1rem 0;
+    text-align: left;
+    transition: var(--transition);
+}
+
+section div.poster div.poster-btn {
+    display: grid;
     justify-content: center;
 }
 
-section div.container div.container-btn img {
-    width: 1rem;
-    transition: all .6s ease-in-out;
+section div.poster div.poster-btn a {
+    display: grid;
+    justify-content: center;
+    padding: .5rem;
+    width: 200px;
+    text-decoration: none;
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    background-color: var(--cor-de-fundo);
+    border: solid 5px var(--border);
+    color: var(--color);
+    cursor: pointer;
+    transition: var(--transition);
 }
 
-section div.container div.container-btn img:hover {
-    transform: scale(1.8);
+section div.poster div.poster-btn a:hover {
+    background-color: var(--fundo-botao);
+    color: var(--color-botao);
+    border: solid 5px var(--border-botao);
+
+    animation: rotate 1s alternate-reverse forwards;
 }
 
-section div.container div.container-btn img.delete-icon {
-    position: relative;
-    top: -38rem;
-    right: -14.5rem;
-}
-
-section div.container div.container-btn img.edit-icon {
-    position: relative;
-    top: -36rem;
-    right: -13rem;
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 footer {
@@ -247,6 +238,7 @@ footer p {
 footer a {
     margin: 0 1rem;
 }
+
 
 
 

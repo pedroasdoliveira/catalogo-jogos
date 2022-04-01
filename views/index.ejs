@@ -8,7 +8,7 @@
     <title>Games</title>
 </head>
 <body>
-    <%- include('./partials/header.ejs') %>
+    <%- include('./partials/header_inicio.ejs') %>
 
     <main>
         <section id="inicio">
@@ -18,7 +18,7 @@
             <% jogos.forEach((games) => { %>
                 <div class="container">
                     
-                    <a href="detalhes/<%= games.id %>">
+                    <a class="container-link" href="detalhes/<%= games.id %>">
                         <div class="container-title">
                             <h2><%= games.jogo %></h2>
                         </div>
@@ -35,11 +35,11 @@
                     </div>
                     <div class="container-btn">
                         <a href="/delete/<%= games.id %>">
-                            <i class="fa-duotone fa-trash-can"></i>
+                            <img class="delete-icon" src="/img/trash.svg" alt="delete-icon">
                         </a>
 
                         <a href="/editar/<%= games.id %>">
-                            <i class="fa-duotone fa-pencil"></i>
+                            <img class="edit-icon" src="/img/pencil.svg" alt="edit-icon">
                         </a>
                     </div>
                 </div>

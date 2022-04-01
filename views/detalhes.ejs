@@ -4,17 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/detalhes.css">
     <title>Game Description</title>
 </head>
 <body>
+    
+    <%- include('./partials/header.ejs') %>
+
     <main>
 
-        <section>
+        <section id="#inicio">
 
+            <h2>Detalhes</h2>
+
+            <div class="poster">
             
+                <div class="poster-image">
+                    <img src="<%= jogos.imagem %>" alt="Capa do jogo">
+                </div>
+
+                <div class="poster-title">
+                    <h3><%= jogos.jogo %></h3>
+                </div>
+
+                <div class="poster-infos">
+                    <p><%= jogos.ano %></p>
+                    <p>Plataformas: <%= jogos.plataforma %></p>
+                    <p>Gêneros: <%= jogos.genero %></p>
+                    <p class="descricao"><%= jogos.descricao %></p>
+                </div>
+
+                <div class="poster-btn">
+                    <a id="voltar" href="/voltar">Voltar</a>
+                </div>
+
+            </div>
 
         </section>
 
     </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="/js/script.js"></script>
 </body>
 </html>

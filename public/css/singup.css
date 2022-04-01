@@ -214,7 +214,7 @@ section div.container form button:hover {
     color: var(--color-botao);
     border: solid 5px var(--border-botao);
     
-    animation: rotate 1s alternate infinite;
+    animation: rotate 1s alternate-reverse forwards;
 }
 
 @keyframes rotate {
@@ -245,7 +245,7 @@ section div.container a#voltar:hover {
     color: var(--color-botao);
     border: solid 5px var(--border-botao);
 
-    animation: rotate 1s alternate infinite;
+    animation: rotate 1s alternate-reverse forwards;
 }
 
 footer {

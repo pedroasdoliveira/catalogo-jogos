@@ -24,12 +24,11 @@ export const singup = (req, res) => {
     }
 }
 
-export const postAdd = async (req, res) => {
+export const postAdd = async (req, res) => { // Criar formulario
     try {
         const {jogo, imagem, plataforma, genero, descricao, ano} = req.body;
-        const novoJogo = await games.create({jogo, imagem, plataforma, genero, descricao, ano})
+        await games.create({jogo, imagem, plataforma, genero, descricao, ano})
         console.log(req.body)
-        
     }
 
     catch(err) {
@@ -37,7 +36,7 @@ export const postAdd = async (req, res) => {
     }
 }
 
-export const getDetalhes = async (req, res) => {
+export const getDetalhes = async (req, res) => { // Detalhes do id(catalogo) escolhido
     try {
         const jogos = await games.findByPk(req.params.id)
         res.render('detalhes', {
