@@ -5,25 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/estilo.css" type="text/css">
-    <title>Catalogo Games</title>
+    <title>Games</title>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
-    <% console.log(jogos) %>
 
-    <section id="inicio">
+    <main>
+        <section id="inicio">
 
-        <h1>Catalogo de Jogos</h1>
-
-        <div>
-            <% jogos.forEach((games) => { %>
-
-                <p><%= games.jogo %></p>
+            <h1>Catalogo de Jogos</h1>
     
-            <% }) %>
-        </div>
+            <% jogos.forEach((games) => { %>
+                <div class="container">
+                    
+                    <a href="detalhes/<%= games.id %>">
+                        <div class="container-title">
+                            <h2><%= games.jogo %></h2>
+                        </div>
 
-    </section>
+                        <div class="container-image">
+                            <img src="<%= games.imagem %>" alt="Capa do jogo">
+                        </div>
+                    </a>
+
+                    <div class="container-infos">
+                        <p><%= games.ano %></p>
+                        <p>Plataformas: <%= games.plataforma %></p>
+                        <p>Gêneros: <%= games.genero %></p>
+                    </div>
+                    <div class="container-btn">
+                        <a href="/delete/<%= games.id %>">
+                            <i class="fa-duotone fa-trash-can"></i>
+                        </a>
+
+                        <a href="/editar/<%= games.id %>">
+                            <i class="fa-duotone fa-pencil"></i>
+                        </a>
+                    </div>
+                </div>
+            <% }) %>
+    
+        </section>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
 
     <script src="/js/script.js"></script>
 </body>

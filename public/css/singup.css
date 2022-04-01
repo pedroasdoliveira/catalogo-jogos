@@ -18,6 +18,9 @@
     --border: #23367a;
     --shadow: #82a2c2;
     --input: #eff7ff;
+    --fundo-botao: #1a2331;
+    --color-botao: #e4e5e6;
+    --border-botao: #4460c5;
 
     --global-padding: 5rem;
 }
@@ -32,6 +35,9 @@
     --border: #4460c5;
     --shadow: #132e55;
     --input: #74787a;
+    --fundo-botao: #ceddec;
+    --color-botao: #222527;
+    --border-botao: #23367a;
 }
 
 body {
@@ -113,6 +119,10 @@ div.label input {
     transition: all .6s ease-in-out;
 }
 
+main {
+    margin-top: 5rem;
+}
+
 section {
     width: 100%;
     padding: var(--global-padding);
@@ -122,15 +132,6 @@ section {
     justify-content: space-evenly;
 }
 
-section h1 {
-    font-size: 2.5rem;
-    color: var(--color);
-    margin: 2rem auto;
-    text-align: center;
-    width: 100%;
-    transition: all .6s ease-in-out;
-}
-
 section div.container {
     margin: 1rem;
     position: relative;
@@ -138,89 +139,113 @@ section div.container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 400px;
-    max-height: 650px;
+    max-width: 1220px;
+    width: 60%;
 }
 
-section div.container a {
-    text-decoration: none;
-    transition: all .6s ease-in-out;
-}
-
-section div.container a:hover {
-    transform: scale3d(1.1, 1.0, 1.3);
-}
-
-section div.container div.container-title {
-    display: flex;
-    justify-content: center;
-}
-
-section div.container div.container-title h2 {
-    color: var(--color);
-    font-size: 1.8rem;
-    text-align: center;
-    margin-top: .8rem;
-    margin-bottom: 1rem;
-    padding-right: 1rem;
-    transition: all .6s ease-in-out;
-}
-
-section div.container div.container-image {
+section div.container h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    object-fit: contain;
-}
-
-section div.container div.container-image img {
-    width: 55vh;
-    height: 70vh;
-    border-radius: 10px;
-}
-
-section div.container div.container-infos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin: 1rem 5vw;
-    padding: 0;
-    list-style-type: none;
-}
-
-section div.container div.container-infos p {
-    font-size: 1.1rem;
+    width: 100%;
+    margin-bottom: 3rem;
     color: var(--color);
-    line-height: 1.5rem;
-    font-weight: 600;
-    text-align: center;
+    transition: all .6s ease-in-out;
+    font-size: 2rem;
+}
+
+section div.container form {
+    width: 70%;
+    padding: 2rem;
+    border: solid 10px var(--border);
+    background-color: var(--shadow);
     transition: all .6s ease-in-out;
 }
 
-section div.container div.container-btn {
+section div.container form label {
+    color: var(--color);
+    font-size: 1.3rem;
     display: flex;
-    gap: 0.5rem;
     justify-content: center;
-}
-
-section div.container div.container-btn i {
-    width: 1rem;
+    margin: 1rem;
     transition: all .6s ease-in-out;
 }
 
-section div.container div.container-btn img:hover {
-    transform: scale(2);
+section div.container form input {
+    background-color: var(--input);
+    color: var(--color);
+    width: 100%;
+    font-size: 1rem;
+    padding: .3rem;
+    margin: 1rem 0;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: all .6s ease-in-out;
 }
 
-section div.container div.container-btn img.delete-icon {
-    position: absolute;
-    top: 36rem;
-    right: 0;
+section div.container form textarea {
+    width: 100%;
+    background-color: var(--input);
+    color: var(--color);
+    font-size: 1rem;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid var(--border);
+    transition: all .6s ease-in-out;
 }
 
-section div.container div.container-btn img.edit-icon {
-    position: absolute;
-    top: 36rem;
-    right: 2rem;
+section div.container form button {
+    padding: .5rem;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    margin: 1rem auto;
+    font-size: 1.2rem;
+    background-color: var(--cor-de-fundo);
+    border: solid 5px var(--border);
+    color: var(--color);
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+}
+
+section div.container form button:hover {
+    background-color: var(--fundo-botao);
+    color: var(--color-botao);
+    border: solid 5px var(--border-botao);
+    
+    animation: rotate 1s alternate infinite;
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+section div.container a#voltar {
+    padding: .5rem;
+    width: 30%;
+    text-decoration: none;
+
+    display: flex;
+    justify-content: center;
+
+    margin: 2rem auto;
+    font-size: 1.2rem;
+    background-color: var(--cor-de-fundo);
+    border: solid 5px var(--border);
+    color: var(--color);
+    cursor: pointer;
+    transition: all .6s ease-in-out ;
+}
+
+section div.container a#voltar:hover {
+    background-color: var(--fundo-botao);
+    color: var(--color-botao);
+    border: solid 5px var(--border-botao);
+
+    animation: rotate 1s alternate infinite;
 }
 
 footer {

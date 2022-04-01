@@ -4,3 +4,4 @@ const checkbox = document.querySelector('#switch')
 checkbox.addEventListener('change', () => {
     html.classList.toggle('dark-mode')
 })
+

@@ -10,6 +10,65 @@ export const getIndex = async (req, res) => {
 
     catch(err) {
         console.log(err.message)
+        res.send(err.message)
     }
 }
 
+export const singup = (req, res) => {
+    try {
+        res.render('singup.ejs')
+    }
+    catch(err) {
+        console.log(err.message)
+        res.send(err.message)
+    }
+}
+
+export const postAdd = async (req, res) => {
+    try {
+        const {jogo, imagem, plataforma, genero, descricao, ano} = req.body;
+        const novoJogo = await games.create({jogo, imagem, plataforma, genero, descricao, ano})
+        console.log(req.body)
+        
+    }
+
+    catch(err) {
+        res.send(err.message)
+    }
+}
+
+export const getDetalhes = async (req, res) => {
+    try {
+        const jogos = await games.findByPk(req.params.id)
+        res.render('detalhes', {
+            jogos
+        })
+    }
+    catch(err) {
+        res.send(err.message)
+    }
+}
+
+export const getDelete = async (req, res) => {
+    try {
+        await games.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect('/')
+    }
+    catch(err) {
+        res.send(err.message)
+    }
+}
+
+export const getBack = (req, res) => {
+    try {
+        res.redirect('/')
+    }
+
+    catch(err) {
+        res.send(err.message)
+    }
+}

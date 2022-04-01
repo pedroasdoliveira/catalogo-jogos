@@ -32,6 +32,11 @@ export const games = connection.define('games', {
     descricao: {
         type: Sequelize.TEXT,
         allowNull: false
+    },
+
+    ano: {
+        type: Sequelize.INTEGER,
+        allowNull: true
     }
 }, {
     freezeTableName: true,
