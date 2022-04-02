@@ -45,3 +45,7 @@ export const games = connection.define('games', {
     timestamps: false
 }
 )
+
+const initTable = async () => {
+    await games.sync()
+}
