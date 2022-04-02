@@ -18,6 +18,7 @@
     --border: #23367a;
     --shadow: #82a2c2;
     --input: #eff7ff;
+    --filter: invert(0)
 
     --global-padding: 5rem;
     --transition: all .6s ease-in-out;
@@ -33,6 +34,7 @@
     --border: #4460c5;
     --shadow: #132e55;
     --input: #74787a;
+    --filter: invert(1)
 }
 
 body {
@@ -206,22 +208,23 @@ section div.container div.container-btn {
 section div.container div.container-btn img {
     width: 1rem;
     transition: all .6s ease-in-out;
+    filter: var(--filter);
 }
 
 section div.container div.container-btn img:hover {
-    transform: scale(1.8);
+    transform: scale(2);
 }
 
 section div.container div.container-btn img.delete-icon {
     position: relative;
     top: -38rem;
-    right: -14.5rem;
+    right: -15.5rem;
 }
 
 section div.container div.container-btn img.edit-icon {
     position: relative;
     top: -36rem;
-    right: -13rem;
+    right: -14rem;
 }
 
 footer {
