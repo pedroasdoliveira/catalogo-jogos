@@ -4,7 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config()
 
 export const connection = new Sequelize(
-    process.env.DATABASE_URL,    
+    DB_BASE = jogos,
+    DB_USER = postgres,
+    DB_PASS = Pa44528033,
     {
         dialect: 'postgres',
         dialectOptions: {
