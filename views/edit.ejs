@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/edit.css">
+    <title>Editar</title>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+
+        <section id="inicio">
+            
+            <div class="container">
+
+                <h2>Editar <%= game.jogo %></h2>
+                <img src="<%= game.imagem %>" alt="Capa do jogo">
+
+                <form action="/editar/<%= game.id %>" method="post">
+
+                    <label for="jogo">
+                        Nome do Jogo:
+                    </label>
+                    <input type="text" id="jogo" name="jogo" required value="<%= game.jogo %>">
+
+                    <label for="imagem">
+                        Link da capa:
+                    </label>
+                    <input type="url" id="imagem" name="imagem" required value="<%= game.imagem %>">
+
+                    <label for="plataforma">
+                        Plataformas:
+                    </label>
+                    <input type="text" id="plataforma" name="plataforma" required value="<%= game.plataforma %>">
+
+                    <label for="genero">
+                        Gêneros:
+                    </label>
+                    <input type="text" id="genero" name="genero" required value="<%= game.genero %>">
+
+                    <label for="ano">
+                        Ano do lançamento:
+                    </label>
+                    <input type="number" id="ano" name="ano" required value="<%= game.ano %>">
+
+                    <label for="descricao">
+                        Descrição
+                    </label>
+                    <textarea name="descricao" id="descricao" cols="30" rows="18" spellcheck="true" wrap="hard" required value="<%= game.descricao %>"></textarea>
+
+                    <button id="btnadd" type="submit">Adicionar</button>
+
+                </form>
+
+                <a id="voltar" href="/voltar">Voltar</a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="/js/script.js"></script>
+</body>
+</html>
