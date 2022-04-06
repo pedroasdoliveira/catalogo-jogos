@@ -34,7 +34,7 @@
                         <p>Gêneros: <%= games.genero %></p>
                     </div>
                     <div class="container-btn">
-                        <a href="/delete/<%= games.id %>">
+                        <a href="/getById/<%= games.id %>/del" id="open">
                             <img class="delete-icon" src="/img/trash.svg" alt="delete-icon">
                         </a>
 
@@ -42,11 +42,17 @@
                             <img class="edit-icon" src="/img/pencil.svg" alt="edit-icon">
                         </a>
                     </div>
+
                 </div>
             <% }) %>
     
         </section>
+
     </main>
+
+    <% if (cardDel != null) {%>
+        <%- include('./partials/modal.ejs') %>
+    <% } %>
 
     <%- include('./partials/footer.ejs') %>
 

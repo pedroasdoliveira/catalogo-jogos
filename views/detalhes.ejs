@@ -18,15 +18,18 @@
             <h2>Detalhes</h2>
 
             <div class="poster">
-            
-                <div class="poster-image">
-                    <img src="<%= jogos.imagem %>" alt="Capa do jogo">
+                
+                <div class="poster-container">
+                    <div class="poster-image">
+                        <img src="<%= jogos.imagem %>" alt="Capa do jogo">
+                    </div>
+    
+                    <div class="poster-title">
+                        <h3><%= jogos.jogo %></h3>
+                    </div>
+    
                 </div>
-
-                <div class="poster-title">
-                    <h3><%= jogos.jogo %></h3>
-                </div>
-
+                
                 <div class="poster-infos">
                     <p><%= jogos.ano %></p>
                     <p>Plataformas: <%= jogos.plataforma %></p>

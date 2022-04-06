@@ -1,0 +1,18 @@
+<section class="modal-overlay" id="overlay">
+    <div class="modal" id="modal">
+
+        <div class="modal-header">
+            <h3>Deletar jogo</h3>
+            <a href="/" id="close-modal"><img src="/img/x-lg.svg" alt="close-icon"></a>
+        </div>
+
+        <div class="modal-body">
+            <p>Tem certeza que dejesa exluir o jogo <%= cardDel.jogo %>?</p>
+            <div id="btns-del">
+                <a id="no" href="/">Não</a>
+                <a id="yes" href="/delete/<%= cardDel.id %>">Sim</a>
+            </div>
+        </div>
+
+    </div>
+</section>

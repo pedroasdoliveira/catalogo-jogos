@@ -41,6 +41,23 @@
     --border-botao: #23367a;
 }
 
+::-webkit-scrollbar {
+    width: .8rem;
+    transition: var(--transition);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cor-de-fundo);
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color);
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
 body {
     background-color: var(--cor-de-fundo);
     color: var(--color-normal);
@@ -138,6 +155,11 @@ section div.poster {
     padding: 20px;
 }
 
+section div.poster div.poster-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
 section div.poster div.poster-image {
     display: grid;
     justify-content: center;
@@ -151,19 +173,20 @@ section div.poster div.poster-image img {
 }
 
 section div.poster div.poster-title {
-    display: grid;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 section div.poster div.poster-title h3 {
     color: var(--color);
-    font-size: 2rem;
-    margin: 1rem 0;
+    font-size: 2.5rem;
     transition: var(--transition);
 }
 
 section div.poster div.poster-infos {
     display: grid;
+    margin-top: 1rem;
 }
 
 section div.poster div.poster-infos p {

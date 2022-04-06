@@ -6,7 +6,8 @@ export const getIndex = async (req, res) => { // config
             order: [["jogo", "ASC"]] // ordenar os cards por ordem alfabetica
         })
         res.status(200).render('index.ejs', {
-            jogos
+            jogos,
+            cardDel: null,
         })
     }
 
@@ -60,7 +61,7 @@ export const getDelete = async (req, res) => { // Deletar informações
         res.status(200).redirect('/')
     }
     catch(err) {
-        res.send(err.message)
+        res.status(500).send(err.message)
     }
 }
 
@@ -104,6 +105,25 @@ export const postEditar = async (req, res) => {
 
         res.redirect('/')
     }
+    catch(err) {
+        res.status(500).send(err.message)
+    }
+}
+
+export const getById = async (req, res) => {
+    try {
+        const method = req.params.method;
+        const jogos = await games.findAll();
+        const card = await games.findByPk(req.params.id);
+
+        if (method == 'del') {
+            res.render('index', {
+                jogos,
+                cardDel: card,
+            });
+        }
+    }
+
     catch(err) {
         res.status(500).send(err.message)
     }
