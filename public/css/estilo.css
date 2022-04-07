@@ -106,22 +106,38 @@ header ul li {
 div.label {
     color: var(--color);;
     width: 20rem;
+    padding-right: 4rem;
+    filter: var(--filter);
+    transition: var(--transition);
 }
 
 div.dark-mode {
     padding-left: 10rem;
+    padding-right: 0;
+    filter: none;
 }
 
-div.label label {
+div.dark-mode label {
     padding: 0 .6rem;
     font-size: 1.5rem;
     cursor: pointer;
     transition: var(--transition);
+    filter: none;
 }
 
-div.label label:hover {
+div.dark-mode label:hover {
     color: var(--color-hover);
     transform: scale3d(2.5, 1.2, 0.3);
+}
+
+div.label button {
+    padding: .2rem .3rem;
+    margin-right: .2rem;
+    border: 1px solid var(--input);
+    background-color: var(--input);
+    transition: var(--transition);
+    cursor: pointer;
+    border-radius: 5px;
 }
 
 div.label input {
@@ -131,6 +147,7 @@ div.label input {
     border: 1px solid var(--cor-de-fundo);
     background-color: var(--input);
     transition: var(--transition);
+    filter: var(--filter);
 }
 
 section {
@@ -369,8 +386,32 @@ footer a {
 }
 
 @media only screen and (max-width: 990px) {
+    header ul {
+        gap: 1rem;
+    }
+
     header ul li {
         font-size: 1.5rem;
+    }
+
+    div.label {
+        width: 15rem;
+    }
+
+    div.label label {
+        padding: 0 .6rem;
+    }
+
+    section div.container div.container-btn img.delete-icon {
+        position: relative;
+        top: -38rem;
+        right: -14.5rem;
+    }
+
+    section div.container div.container-btn img.edit-icon {
+        position: relative;
+        top: -36rem;
+        right: -13rem;
     }
 }
 

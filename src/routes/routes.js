@@ -1,5 +1,5 @@
 import express from 'express'
-import {getIndex, singup, getDetalhes, getDelete, getBack, postAdd, getEditar, postEditar, getById} from '../controller/JogosController.js'
+import {getIndex, singup, getDetalhes, getDelete, getBack, postAdd, getEditar, postEditar, getById, getProcurar} from '../controller/JogosController.js'
 
 export const routes = express.Router()
 
@@ -20,3 +20,5 @@ routes.post('/editar/:id', postEditar) // Editar informações
 routes.get('/getById/:id/:method', getById) // acessar modal
 
 routes.get('/delete/:id', getDelete) // deletar informações
+
+routes.post('/search', getProcurar)

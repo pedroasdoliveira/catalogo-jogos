@@ -1,3 +1,4 @@
+import Sequelize from 'sequelize'
 import {games} from '../models/jogos.js'
 
 export const getIndex = async (req, res) => { // config 
@@ -8,6 +9,7 @@ export const getIndex = async (req, res) => { // config
         res.status(200).render('index.ejs', {
             jogos,
             cardDel: null,
+            search: []
         })
     }
 
@@ -113,7 +115,9 @@ export const postEditar = async (req, res) => {
 export const getById = async (req, res) => {
     try {
         const method = req.params.method;
-        const jogos = await games.findAll();
+        const jogos = await games.findAll({
+            order: [["jogo", "ASC"]]
+        });
         const card = await games.findByPk(req.params.id);
 
         if (method == 'del') {
@@ -124,6 +128,32 @@ export const getById = async (req, res) => {
         }
     }
 
+    catch(err) {
+        res.status(500).send(err.message)
+    }
+}
+
+export const getProcurar = async (req, res) => {
+    try {
+        const pesquisar = req.body.jogo;
+        const jogos = await games.findAll({
+            where: {
+                jogo: {
+                    [Sequelize.Op.like]: `%${pesquisar}%`
+                }
+            }
+        });
+
+        if (pesquisar.length == 0) {
+            window.confirm('Jogo não encontrado')
+            return res.redirect('/')
+        }
+        res.status(200).render('index.ejs', {
+            jogos: [],
+            cardDel: null,
+            search: pesquisar
+        });
+    }
     catch(err) {
         res.status(500).send(err.message)
     }
