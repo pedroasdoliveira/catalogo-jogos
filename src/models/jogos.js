@@ -47,5 +47,7 @@ export const games = connection.define('games', {
 )
 
 const initTable = async () => {
-    await games.sync()
-}
+    await games.sync();
+};
+
+initTable();
