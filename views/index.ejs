@@ -47,45 +47,6 @@
             <% }) %>
     
         </section>
-        
-        <!-- <% if (search.lengh != 0) {%> // Função inacabada
-            <section id="inicio">
-
-                <h1>Catalogo de Jogos</h1>
-        
-                <% search.forEach((games) => { %>
-                    <div class="container">
-                        
-                        <a class="container-link" href="detalhes/<%= games.id %>">
-                            <div class="container-title">
-                                <h2><%= games.jogo %></h2>
-                            </div>
-
-                            <div class="container-image">
-                                <img src="<%= games.imagem %>" alt="Capa do jogo">
-                            </div>
-                        </a>
-
-                        <div class="container-infos">
-                            <p><%= games.ano %></p>
-                            <p>Plataformas: <%= games.plataforma %></p>
-                            <p>Gêneros: <%= games.genero %></p>
-                        </div>
-                        <div class="container-btn">
-                            <a href="/getById/<%= games.id %>/del" id="open">
-                                <img class="delete-icon" src="/img/trash.svg" alt="delete-icon">
-                            </a>
-
-                            <a href="/editar/<%= games.id %>">
-                                <img class="edit-icon" src="/img/pencil.svg" alt="edit-icon">
-                            </a>
-                        </div>
-
-                    </div>
-                <% }) %>
-        
-            </section>
-        <% } %> -->
 
     </main>
 
